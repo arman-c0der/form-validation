@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Form Validation</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h1>Create Profile</h1>
+      <p class="form-description">Please fill out the form with valid information</p>
+      
+      <form id="validationForm" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <div class="input-group">
+            <i class="icon fas fa-user"></i>
+            <input type="text" id="name" placeholder="Enter your full name">
+          </div>
+          <small class="error-message"></small>
+          <small class="info-message">Enter your first and last name</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="username">Username</label>
+          <div class="input-group">
+            <i class="icon fas fa-at"></i>
+            <input type="text" id="username" placeholder="Choose a username">
+          </div>
+          <small class="error-message"></small>
+          <small class="info-message">4-16 characters, letters, numbers and underscores only</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <div class="input-group">
+            <i class="icon fas fa-envelope"></i>
+            <input type="email" id="email" placeholder="Enter your email address">
+          </div>
+          <small class="error-message"></small>
+          <small class="info-message">We'll never share your email with anyone else</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <div class="input-group">
+            <i class="icon fas fa-phone"></i>
+            <input type="tel" id="phone" placeholder="Enter your phone number">
+          </div>
+          <small class="error-message"></small>
+          <small class="info-message">Format: +8801XXXXXXXXX, 01XXXXXXXXX, or 01XXX-XXXXXX</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="facebook">Facebook Profile</label>
+          <div class="input-group">
+            <i class="icon fab fa-facebook"></i>
+            <input type="text" id="facebook" placeholder="Enter your Facebook profile slug">
+          </div>
+          <small class="error-message"></small>
+          <small class="info-message">Enter your Facebook username or profile ID</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="generatedPassword">Generated Password</label>
+          <div class="input-group">
+            <i class="icon fas fa-key"></i>
+            <input type="text" id="generatedPassword" placeholder="Click Generate for a strong password" readonly>
+          </div>
+          <div class="button-group">
+            <button type="button" id="generateBtn" class="action-btn generate-btn">
+              <i class="fas fa-sync-alt"></i> Generate
+            </button>
+            <button type="button" id="copyBtn" class="action-btn copy-btn">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+          </div>
+          <small class="info-message" id="passwordGenMessage">Password generated</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-group">
+            <i class="icon fas fa-lock"></i>
+            <input type="password" id="password" placeholder="Create a strong password">
+            <i class="toggle-password fas fa-eye-slash" id="togglePassword"></i>
+          </div>
+          <small class="error-message"></small>
+          <div class="password-strength">
+            <div class="strength-meter">
+              <div class="strength-bar" id="strengthBar"></div>
+            </div>
+            <small id="strengthText">Password strength</small>
+          </div>
+          <small class="info-message">Use at least 8 characters with letters, numbers and symbols</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <div class="input-group">
+            <i class="icon fas fa-lock"></i>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password">
+            <i class="toggle-password fas fa-eye-slash" id="toggleConfirmPassword"></i>
+          </div>
+          <small class="error-message"></small>
+          <small class="info-message">Re-enter your password to confirm</small>
+        </div>
+        
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span>Sign Up</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
